@@ -31,7 +31,7 @@ enum DownloadState: Equatable {
 
 final class FileDownloader: NSObject {
     
-    private var state = PublishSubject<DownloadState>()
+    private var state = PublishRelay<DownloadState>()
     private var filename = ""
     private var task: URLSessionDownloadTask!
     
@@ -66,17 +66,17 @@ extension FileDownloader {
 extension FileDownloader: URLSessionDownloadDelegate {
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        state.onNext(.done(location))
+        state.accept(.done(location))
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         let current = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-        state.onNext(.downloading(current))
+        state.accept(.downloading(current))
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
-            state.onNext(.error(error))
+            state.accept(.error(error))
         }
     }
 }
