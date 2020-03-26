@@ -14,6 +14,7 @@
 		D6302EE1242C563C00E0578C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6302EE0242C563C00E0578C /* Assets.xcassets */; };
 		D6302EE4242C563C00E0578C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6302EE2242C563C00E0578C /* LaunchScreen.storyboard */; };
 		D6302EF1242C577800E0578C /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6302EF0242C577800E0578C /* FileDownloader.swift */; };
+		D6302EF4242C5A5000E0578C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6302EF3242C5A5000E0578C /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D6302EE3242C563C00E0578C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6302EE5242C563C00E0578C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6302EF0242C577800E0578C /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
+		D6302EF3242C5A5000E0578C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6302EF4242C5A5000E0578C /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				D6302ED6242C563A00E0578C /* FileDownloader */,
 				D6302ED5242C563A00E0578C /* Products */,
+				D6302EF2242C5A5000E0578C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +114,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		D6302EF2242C5A5000E0578C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6302EF3242C5A5000E0578C /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,6 +132,7 @@
 				D6302ED0242C563A00E0578C /* Sources */,
 				D6302ED1242C563A00E0578C /* Frameworks */,
 				D6302ED2242C563A00E0578C /* Resources */,
+				D6302EF7242C5A7A00E0578C /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -175,6 +188,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6302EF7242C5A7A00E0578C /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6302ED0242C563A00E0578C /* Sources */ = {
@@ -330,7 +365,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5EF57U232;
-				INFOPLIST_FILE = FileDownloader/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FileDownloader/App/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +387,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5EF57U232;
-				INFOPLIST_FILE = FileDownloader/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FileDownloader/App/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
