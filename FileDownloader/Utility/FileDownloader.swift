@@ -10,10 +10,23 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-enum DownloadState {
+enum DownloadState: Equatable {
     case downloading(Float)
     case done(URL)
     case error(Error)
+    
+    static func == (lhs: DownloadState, rhs: DownloadState) -> Bool {
+        switch (lhs, rhs) {
+        case (.downloading(let progressL), .downloading(let progressR)):
+            return progressL == progressR
+        case (.done, .done):
+            return true
+        case (.error, .error):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 final class FileDownloader: NSObject {

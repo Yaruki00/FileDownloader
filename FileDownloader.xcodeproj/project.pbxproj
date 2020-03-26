@@ -15,6 +15,8 @@
 		D6302EE4242C563C00E0578C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6302EE2242C563C00E0578C /* LaunchScreen.storyboard */; };
 		D6302EF1242C577800E0578C /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6302EF0242C577800E0578C /* FileDownloader.swift */; };
 		D6302EF4242C5A5000E0578C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6302EF3242C5A5000E0578C /* RxSwift.framework */; };
+		D6302EF9242C868F00E0578C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6302EF8242C868F00E0578C /* RxCocoa.framework */; };
+		D6302EFD242C86DB00E0578C /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6302EFC242C86DB00E0578C /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D6302EE5242C563C00E0578C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6302EF0242C577800E0578C /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		D6302EF3242C5A5000E0578C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D6302EF8242C868F00E0578C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		D6302EFC242C86DB00E0578C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6302EF9242C868F00E0578C /* RxCocoa.framework in Frameworks */,
 				D6302EF4242C5A5000E0578C /* RxSwift.framework in Frameworks */,
+				D6302EFD242C86DB00E0578C /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +123,8 @@
 		D6302EF2242C5A5000E0578C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6302EFC242C86DB00E0578C /* RxRelay.framework */,
+				D6302EF8242C868F00E0578C /* RxCocoa.framework */,
 				D6302EF3242C5A5000E0578C /* RxSwift.framework */,
 			);
 			name = Frameworks;
@@ -199,6 +207,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -370,6 +380,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FileDownloader/App/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +403,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FileDownloader/App/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
